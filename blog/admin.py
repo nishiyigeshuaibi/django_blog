@@ -12,3 +12,7 @@ class ArticleAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
+    search_fields = ("title", "content")
+    list_filter = ("is_published", "created_at")
+    ordering = ("-created_at",)
+    list_per_page = 20
